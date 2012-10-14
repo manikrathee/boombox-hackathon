@@ -15,13 +15,55 @@
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
 	<script src="js/libs/modernizr-2.5.3.min.js"></script>
+	<script type="text/javascript" src="//use.typekit.net/mtt4uec.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-	<div class="container">
+	<header id="page-header">
+		<div class="container">
+			<a href="#" title="Boombox"><h1>BoomBox</h1></a>
+		</div>
+	</header>
+	<div id="player">
+		<div class="container">
+			<h1 id="logo">b</h1>
+			<ul id="controls" class="ss-icon">
+				<li><a href="#" title="Previous">Previous</a></li>
+				<li><a href="#" title="Play">Play</a></li>
+				<li><a href="#" title="Next">Next</a></li>
+			</ul>
+		</div>
+	</div> <!-- /player -->
+	<div id="main" class="container">
 		<section class="row">
-			
+			<h2 class="page-title">STREAM</h2>
+			<div id="filters">
+				<ul>
+					<li><strong>Filters:</strong></li>
+					<li>Genre</li>
+					<li>Style</li>
+					<li>Rating</li>
+				</ul>
+			</div> <!-- /twelvecol -->
 		</section> <!-- /section.row -->
+		
+		<section class="row">
+			<!-- 
+			<div id="stream-intro">
+				<h3>Welcome to TheStream</h3>
+				<p>Cras sed ante. Phasellus in massa. Curabitur dolor eros, gravida et, hendrerit ac, cursus non, massa. Aliquam lorem. In hac habitasse platea dictumst. Cras eu mauris. Quisque lacus. Donec ipsum. Nullam vitae sem at nunc pharetra ultricies.</p>
+			</div> --> <!-- /stream-intro -->
+		</section> <!-- /section.row -->
+		
+		<section id="main-stream" class="row">
+			<div id="loader"></div> <!-- /loader -->
+			
+		</section> <!-- /section.row /#main-stream -->
 	</div> <!-- /container -->
+	
+	
+	
+	
 
 	<script src="js/script-ck.js"></script>
 	<!--[if lt IE 7 ]>

@@ -1,2 +1,28 @@
 /* Small Desktop Styles */
 /* min-width 768px */
+
+#player{
+	&.fixed{
+		.fadeInUp;
+		position: fixed;
+		bottom: 0;
+		z-index: 999;
+		background: @player;
+		.transparent-gradient;
+		color: #f9f9f9;
+		text-shadow: 1px 1px 0 darken(@player, 10%);
+		#controls{
+			a{
+				color: #f9f9f9;
+			}
+		}
+	}
+}
+
+.page-title{
+	float: left;
+}
+#filters{
+	float: right;
+	margin: 44px 0 0 0;
+}
