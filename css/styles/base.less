@@ -6,28 +6,32 @@
 ::selection { background:#333; color:#fff; text-shadow: none; }
 a:link { -webkit-tap-highlight-color: #333; }
 
-/* 
-Retina Mixin Autocompiler
-.logo {
-  .at2x('/images/my_image.png', 200px, 100px);
+img, video, iframe{
+	max-width: 100%;
 }
- */
  
  @cocon: "ff-cocon-web-pro",helvetica,tahoma,verdana,sans-serif;
  @prox:  "proxima-nova",helvetica,tahoma,verdana,sans-serif;
- @player: #3c4a55;
- 
+ @player: rgba(60,74,85,1);
+ @yellow: rgb(255, 245, 0);
  
  body{
  	background: #f0f0f0 url('../images/body-bg.png') repeat 50% 50%;
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjBmMGYwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-	background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(240,240,240,1))); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(240,240,240,1)));
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%); 
+	background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%); 
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%);
+	background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(240,240,240,1) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=1 );
+	-webkit-transition: background 0.25s linear, background-color 0.25s linear, background-image 0.25s linear;
+	-moz-transition: background 0.25s linear, background-color 0.25s linear, background-image 0.25s linear;
+	transition: background 0.25s linear, background-color 0.25s linear, background-image 0.25s linear;
+	border-top: 5px solid @yellow;
+	&.tracked{
+		background-size: cover;
+	}
  }
  
  /* Animation Triggers */
@@ -47,7 +51,18 @@ Retina Mixin Autocompiler
  
  
  #page-header{
- 	background: #2a2a2a url('../images/header-bg.jpg') no-repeat 50% 78%;
+ 	position: relative;
+	z-index: 999;
+ 	// background: #2a2a2a url('../images/header-bg.jpg') no-repeat 50% 78%;
+	background: rgb(76,76,76); 
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM0YzRjNGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzMzMzMzIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover,  rgba(76,76,76,1) 0%, rgba(51,51,51,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(76,76,76,1)), color-stop(100%,rgba(51,51,51,1)));
+	background: -webkit-radial-gradient(center, ellipse cover,  rgba(76,76,76,1) 0%,rgba(51,51,51,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover,  rgba(76,76,76,1) 0%,rgba(51,51,51,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  rgba(76,76,76,1) 0%,rgba(51,51,51,1) 100%);
+	background: radial-gradient(ellipse at center,  rgba(76,76,76,1) 0%,rgba(51,51,51,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#333333',GradientType=1 );
  	position: relative;
  	border-bottom: 1px solid #fff;
  	&:after{
@@ -62,24 +77,35 @@ Retina Mixin Autocompiler
  	h1{
  		display: block;
  		text-decoration: none;
-		padding: 100px 0;
-		font-size: 55px;
+		padding: 70px 0;
+		font-size: 55px/1;
+		letter-spacing: -4.5px;
  		font-family: @cocon;
  		text-transform: lowercase;
 		text-align: center;
 		font-weight: bold;
-		color: lighten(@player, 75%);
-		text-shadow: 1px 1px 0 darken(@player, 25%);
+		// color: lighten(@player, 75%);
+		color: #f9f9f9;
+		text-shadow: 1px 3px 3px #000;
 		margin: 0;
-		line-height: 1;
+		-webkit-transition: padding 0.25s linear;
+		-moz-transition: padding 0.25s linear;
+		transition: padding 0.25s linear;
+		span{
+			font-size: 32px/1;
+			margin-left: 4px;
+		}
+		&.loaded{
+			padding: 20px 0;
+		}
  	}
  	a{
  		text-decoration: none;
  	}
  }
  #player{
- 	// Opacity 0 until scroll adds .fixed
- 	// opacity: 0;
+ 	position: relative;
+ 	opacity: 0;
  	width: 100%;
 	background: #fff;
 	color: @player;
@@ -89,6 +115,10 @@ Retina Mixin Autocompiler
 	-webkit-transition: position 0.25s linear, bottom 0.25s linear;
 	-moz-transition: position 0.25s linear, bottom 0.25s linear;
 	transition: position 0.25s linear, bottom 0.25s linear;
+	border-bottom: 1px solid #fff;
+	&.active{
+		.fadeInDown;
+	}
  	&:after{
  		display: block;
  		position: absolute;
@@ -103,10 +133,11 @@ Retina Mixin Autocompiler
 	}
 	#logo{
  		font-family: @cocon;
+ 		margin: 0;
 	}
 	#controls{
 		float: left;
-		margin: 30px 0 0 26px;
+		margin: 12px 0 0 26px;
 		padding: 0;
 		overflow: hidden;
 		zoom: 1;
@@ -127,6 +158,67 @@ Retina Mixin Autocompiler
 			}
 		}
 	}
+	#now-playing{
+		float: left;
+		opacity: 1;
+		width: 75%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin: 12px 0 0 17px;
+		font-family: @prox;
+		font-size: 16px/1;
+		font-weight: bold;
+		text-transform: uppercase;
+		-webkit-transition: opacity 0.25s linear;
+		-moz-transition: opacity 0.25s linear;
+		transition: opacity 0.25s linear;
+		&.hidden{
+			opacity: 0;
+		}
+		span{
+			font-weight: 300;
+		}
+	}
+ }
+ #sidebar{
+ 	background: #fff;
+ 	border-radius: 4px;
+ 	overflow: hidden;
+ 	zoom: 1;
+ 	padding: 10px;
+ 	border-bottom: 1px solid rgb(199, 199, 199);
+ 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+	-webkit-transition: border 0.25s linear;
+	-moz-transition: border 0.25s linear;
+	transition: border 0.25s linear;
+	h2{
+		display: block;
+		background: #333;
+		.transparent-gradient;
+		font-family: @prox;
+		text-transform: uppercase;
+		color: #fff;
+		text-shadow: 1px 1px 0 #000;
+		font-weight: 500;
+		font-size: 21px;
+		text-align: center;
+		padding: 5px 0;
+		margin: -10px -10px 10px -10px;
+		border-top: 2px solid @yellow;
+		.border-radius(4px, 4px, 0, 0);
+	}
+	ul{
+		margin: 0 0 15px 0;
+		li{
+			list-style-type: none;
+			margin:0;
+			padding:0;
+			font-family: @prox;
+			
+		}
+	}
  }
  #loader{
  	width: 100%;
@@ -139,6 +231,13 @@ Retina Mixin Autocompiler
 	font-size: 40px;
 	text-transform: uppercase;
 	color: #666;
+ }
+ #pro-tip{
+	float: left;
+ 	font-family: @prox;
+ 	font-size: 12px/1;
+	margin: 48px 0 0 15px;
+	font-style: italic;
  }
  #filters{
  	ul{
@@ -155,10 +254,10 @@ Retina Mixin Autocompiler
  }
  .stream-item{
  	background: #fff;
- 	width: 92%;
+ 	width: 90%;
  	border-radius: 4px;
  	padding: 20px;
- 	margin: 20px auto;
+ 	margin: 0 auto 20px;
  	overflow: hidden;
  	zoom: 1;
  	border-top: 3px solid transparent;
@@ -168,9 +267,6 @@ Retina Mixin Autocompiler
 	-webkit-transition: border 0.25s linear;
 	-moz-transition: border 0.25s linear;
 	transition: border 0.25s linear;
- 	&:first-child{
- 		margin-top: 0;	
- 	}
  	&:last-child{
  		margin-bottom: 80px;
  	}
@@ -180,6 +276,14 @@ Retina Mixin Autocompiler
  	&.condensed{
  		padding: 5px;
  		margin: 10px auto;
+ 		background: rgb(231, 231, 231);
+ 		h3{
+ 			display: inline-block;
+			vertical-align: top;
+			zoom: 1;
+			*display: inline;
+			font-size: 15px;
+ 		}
  	}
  	h3{
  		font-family: @prox;
@@ -200,9 +304,37 @@ Retina Mixin Autocompiler
  		}
  	}
  	.album-art{
- 		max-width: 100px;
+ 		max-width: 100%;
  	}
- }
- .album-art{
- 	
+ 	.description{
+ 		font-family: @prox;
+ 		font-size: 13px;
+ 		line-height: 1.2;
+ 		color: #666;
+ 	}
+ 	.track-actions{
+ 		overflow: hidden;
+ 		zoom: 1;
+ 		margin: 0;
+ 		float: right;
+ 		li{
+ 			list-style-type: none;
+ 			float: left;
+ 			margin-right: 5px;
+ 			vertical-align: center;
+ 		}
+ 		.track-action-item{
+ 			color: #999;
+ 			text-decoration: none;
+ 			-webkit-transition: color 0.25s linear;
+			-moz-transition: color 0.25s linear;
+			transition: color 0.25s linear;
+ 			&:hover{
+ 				color: @player;	
+ 			}
+ 			&.active{
+ 				color: @player;
+ 			}
+ 		}
+ 	}
  }
